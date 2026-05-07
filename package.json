@@ -1,0 +1,14 @@
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test",
+    "lint": "node --check src/index.js",
+    "format": "node -e \"console.log('Format is not configured yet.')\""
+  }
+}
