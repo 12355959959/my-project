@@ -14,7 +14,8 @@ runner.
 - `npm.cmd start` - run `src/index.js`
 - `npm.cmd test` - run tests with `node --test`
 - `npm.cmd run lint` - syntax-check `src/index.js`
-- `npm.cmd run format` - print the current format placeholder
+- `npm.cmd run format` - format project files with Prettier
+- `npm.cmd run format:check` - check formatting with Prettier
 
 ## Layout
 

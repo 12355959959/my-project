@@ -9,6 +9,10 @@
     "start": "node src/index.js",
     "test": "node --test",
     "lint": "node --check src/index.js",
-    "format": "node -e \"console.log('Format is not configured yet.')\""
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "prettier": "^3.8.3"
   }
 }

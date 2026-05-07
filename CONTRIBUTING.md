@@ -61,4 +61,3 @@ Examples of files and folders that should stay uncommitted unless explicitly nee
 - build directories
 - coverage reports
 - temporary files
-

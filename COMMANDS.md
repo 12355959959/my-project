@@ -37,6 +37,12 @@ npm.cmd run lint
 npm.cmd run format
 ```
 
+### Format Check
+
+```text
+npm.cmd run format:check
+```
+
 ### Build
 
 ```text
