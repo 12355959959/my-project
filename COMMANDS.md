@@ -1,6 +1,6 @@
 # Commands
 
-This repository uses npm scripts, Prettier, and GitHub Actions CI.
+This repository uses npm scripts, ESLint, Prettier, and GitHub Actions CI.
 
 ## Repository Checks
 
@@ -39,8 +39,8 @@ Runs tests with `node --test --test-isolation=none`.
 npm.cmd run lint
 ```
 
-Runs `node scripts/check.js`, which recursively syntax-checks every `.js` file
-under `src` and `tests` with `node --check`.
+Runs ESLint over the project JavaScript files in `src`, `tests`, and `scripts`
+using the flat config in `eslint.config.js`.
 
 ### Format
 

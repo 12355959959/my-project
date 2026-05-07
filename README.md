@@ -1,7 +1,7 @@
 # my-project
 
-Minimal Node.js project using native npm scripts, Prettier, and GitHub Actions
-CI.
+Minimal Node.js project using native npm scripts, ESLint, Prettier, and GitHub
+Actions CI.
 
 ## Requirements
 
@@ -13,8 +13,8 @@ CI.
 - `npm.cmd install` - install dependencies and create or update the lockfile
 - `npm.cmd start` - run `src/index.js`
 - `npm.cmd test` - run tests with `node --test --test-isolation=none`
-- `npm.cmd run lint` - recursively syntax-check `.js` files under `src` and
-  `tests` with `node scripts/check.js`
+- `npm.cmd run lint` - run ESLint over `src`, `tests`, and `scripts` with the
+  flat config in `eslint.config.js`
 - `npm.cmd run format` - format project files with Prettier
 - `npm.cmd run format:check` - check formatting with Prettier
 

@@ -8,11 +8,14 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "node --test --test-isolation=none",
-    "lint": "node scripts/check.js",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
     "prettier": "^3.8.3"
   }
 }

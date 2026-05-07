@@ -43,6 +43,9 @@ Before opening a pull request, run:
 - `npm.cmd test`
 - `npm.cmd run lint`
 
+`npm.cmd run lint` runs ESLint over the JavaScript files in `src`, `tests`, and
+`scripts` using the flat config in `eslint.config.js`.
+
 `npm.cmd test` uses `node --test --test-isolation=none`.
 
 Do not open a pull request until all three checks pass.
