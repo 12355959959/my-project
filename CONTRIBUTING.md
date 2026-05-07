@@ -2,7 +2,7 @@
 
 ## Branch Names
 
-Use short, descriptive branch names:
+Use lowercase branch names with one of these prefixes:
 
 - `feature/<short-name>`
 - `fix/<short-name>`
@@ -10,11 +10,17 @@ Use short, descriptive branch names:
 - `docs/<short-name>`
 - `test/<short-name>`
 
-Keep names lowercase and avoid spaces.
+Keep the short name concise, use hyphens for word separation, and avoid
+spaces.
+
+Examples:
+
+- `feature/add-health-check`
+- `fix/test-isolation`
 
 ## Commit Messages
 
-Follow Conventional Commits:
+Follow Conventional Commits for every commit:
 
 - `feat: add new capability`
 - `fix: correct bug`
@@ -23,34 +29,37 @@ Follow Conventional Commits:
 - `refactor: restructure code`
 - `test: add or update tests`
 
-Use the optional scope when it helps:
+Use an optional scope when it helps:
 
 - `feat(api): add health endpoint`
 
-Keep the subject line short and imperative.
+Keep the subject line short, imperative, and lowercase after the type.
 
 ## Local Checks
 
-Before opening a pull request, run the project checks available in the repository:
+Before opening a pull request, run:
 
-- format or formatting check
-- lint or static analysis
-- tests
+- `npm.cmd run format:check`
+- `npm.cmd test`
+- `npm.cmd run lint`
 
-Do not submit changes that fail local checks.
+`npm.cmd test` uses `node --test --test-isolation=none`.
+
+Do not open a pull request until all three checks pass.
 
 ## Pull Request Flow
 
 1. Create a branch from `main`.
-2. Make focused commits.
+2. Make focused commits that follow Conventional Commits.
 3. Run the required local checks.
 4. Open a pull request with a clear summary.
-5. Wait for review and required checks to pass.
-6. Merge only after approval.
+5. Wait for GitHub Actions CI to pass.
+6. Merge only after approval and green CI.
 
 ## Required Rules
 
 - Do not push directly to `main`.
+- Pull requests must pass GitHub Actions CI before merge.
 - Do not commit dependency caches.
 - Do not commit build outputs or other generated artifacts.
 - Keep pull requests small and reviewable when possible.
