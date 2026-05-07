@@ -31,6 +31,9 @@ npm.cmd test
 npm.cmd run lint
 ```
 
+Runs `node scripts/check.js`, which recursively syntax-checks every `.js` file
+under `src` and `tests` with `node --check`.
+
 ### Format
 
 ```text

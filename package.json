@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "node --test",
-    "lint": "node --check src/index.js",
+    "lint": "node scripts/check.js",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

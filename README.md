@@ -13,7 +13,8 @@ runner.
 - `npm.cmd install` - install dependencies and create/update the lockfile
 - `npm.cmd start` - run `src/index.js`
 - `npm.cmd test` - run tests with `node --test`
-- `npm.cmd run lint` - syntax-check `src/index.js`
+- `npm.cmd run lint` - recursively syntax-check `.js` files under `src` and
+  `tests` with `node scripts/check.js`
 - `npm.cmd run format` - format project files with Prettier
 - `npm.cmd run format:check` - check formatting with Prettier
 
