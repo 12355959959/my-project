@@ -1,4 +1,11 @@
 node_modules/
+.venv/
+python_src/
+python_tests/
+.pytest_cache/
+.ruff_cache/
+pytest-cache-files-*/
+*.egg-info/
 coverage/
 dist/
 build/

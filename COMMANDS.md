@@ -1,7 +1,7 @@
 # Commands
 
-This repository uses TypeScript, npm scripts, ESLint, Prettier, and GitHub
-Actions CI.
+This repository uses TypeScript, npm scripts, ESLint, Prettier, a small Python
+toolchain with `pytest` and `ruff`, and GitHub Actions CI.
 
 ## Repository Checks
 
@@ -12,9 +12,19 @@ Before opening a pull request, run:
 - `npm.cmd test`
   (`node --test --test-isolation=none --import tsx tests/**/*.test.ts`)
 - `npm.cmd run lint`
+- `.venv\Scripts\python.exe -m pytest`
+- `.venv\Scripts\python.exe -m ruff check python_src python_tests`
+- `.venv\Scripts\python.exe -m ruff format --check python_src python_tests`
 
 You can also use `git status --short` to review modified files and `git diff`
 to inspect line-by-line changes before review.
+
+### Python Setup
+
+```text
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -e ".[dev]"
+```
 
 ### Install
 
@@ -56,6 +66,22 @@ npm.cmd run lint
 Runs ESLint over TypeScript files in `src` and `tests`, plus project JavaScript
 config files, using the flat config in `eslint.config.js`.
 
+### Python Test
+
+```text
+.venv\Scripts\python.exe -m pytest
+```
+
+Runs the Python tests in `python_tests/` against the package in `python_src/`.
+
+### Python Lint
+
+```text
+.venv\Scripts\python.exe -m ruff check python_src python_tests
+```
+
+Runs Ruff linting over the Python source and test directories.
+
 ### Format
 
 ```text
@@ -66,6 +92,12 @@ npm.cmd run format
 
 ```text
 npm.cmd run format:check
+```
+
+### Python Format
+
+```text
+.venv\Scripts\python.exe -m ruff format python_src python_tests
 ```
 
 ### CI

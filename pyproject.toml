@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "my-project"
+version = "0.1.0"
+description = "Minimal Python helpers for my-project."
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.9",
+]
+
+[tool.setuptools]
+package-dir = {"" = "python_src"}
+
+[tool.setuptools.packages.find]
+where = ["python_src"]
+include = ["my_project*"]
+
+[tool.pytest.ini_options]
+testpaths = ["python_tests"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88
+src = ["python_src", "python_tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]

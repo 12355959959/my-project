@@ -12,7 +12,15 @@ const nodeLanguageOptions = {
 
 export default tseslint.config(
   {
-    ignores: ['**/node_modules/**'],
+    ignores: [
+      '**/node_modules/**',
+      '**/.venv/**',
+      '**/.pytest_cache/**',
+      '**/.ruff_cache/**',
+      'python_src/**',
+      'python_tests/**',
+      'pytest-cache-files-*/**',
+    ],
   },
   {
     files: ['eslint.config.js', 'scripts/**/*.js'],

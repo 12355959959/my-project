@@ -7,6 +7,7 @@ Thumbs.db
 
 # Dependencies
 node_modules/
+.venv/
 
 # Temp
 *.tmp
@@ -14,6 +15,13 @@ node_modules/
 *.swo
 tmp/
 temp/
+
+# Python
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+pytest-cache-files-*/
+*.egg-info/
 
 # Build output
 dist/

@@ -1,11 +1,13 @@
 # my-project
 
 Minimal Node.js TypeScript project using native npm scripts, ESLint, Prettier,
-and GitHub Actions CI.
+and GitHub Actions CI, plus a small Python package under `python_src/` with
+`pytest` and `ruff`.
 
 ## Requirements
 
 - Node.js >=24
+- Python 3.12+
 - npm on Windows, use `npm.cmd`
 
 ## Commands
@@ -19,6 +21,14 @@ and GitHub Actions CI.
 - `npm.cmd run typecheck` - run `tsc --noEmit`
 - `npm.cmd run format` - format project files with Prettier
 - `npm.cmd run format:check` - check formatting with Prettier
+- `python -m venv .venv` - create a local Python virtual environment
+- `.venv\Scripts\python.exe -m pip install -e ".[dev]"` - install Python test
+  and lint tools
+- `.venv\Scripts\python.exe -m pytest` - run Python tests
+- `.venv\Scripts\python.exe -m ruff check python_src python_tests` - lint
+  Python code
+- `.venv\Scripts\python.exe -m ruff format python_src python_tests` - format
+  Python code
 
 ## Workflow
 
@@ -28,6 +38,9 @@ Before committing, run:
 - `npm.cmd run typecheck`
 - `npm.cmd test`
 - `npm.cmd run lint`
+- `.venv\Scripts\python.exe -m pytest`
+- `.venv\Scripts\python.exe -m ruff check python_src python_tests`
+- `.venv\Scripts\python.exe -m ruff format --check python_src python_tests`
 
 Branch names should follow one of these patterns:
 
@@ -58,6 +71,8 @@ installs dependencies with `npm.cmd ci` and then runs:
 
 - `src/`
 - `tests/`
+- `python_src/`
+- `python_tests/`
 - `docs/`
 - `scripts/`
 - `.github/workflows/`
