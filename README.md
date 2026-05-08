@@ -1,7 +1,7 @@
 # my-project
 
-Minimal Node.js project using native npm scripts, ESLint, Prettier, and GitHub
-Actions CI.
+Minimal Node.js TypeScript project using native npm scripts, ESLint, Prettier,
+and GitHub Actions CI.
 
 ## Requirements
 
@@ -11,10 +11,12 @@ Actions CI.
 ## Commands
 
 - `npm.cmd install` - install dependencies and create or update the lockfile
-- `npm.cmd start` - run `src/index.js`
-- `npm.cmd test` - run tests with `node --test --test-isolation=none`
-- `npm.cmd run lint` - run ESLint over `src`, `tests`, and `scripts` with the
-  flat config in `eslint.config.js`
+- `npm.cmd start` - run `src/index.ts` with `tsx`
+- `npm.cmd test` - run TypeScript tests with
+  `node --test --test-isolation=none --import tsx tests/**/*.test.ts`
+- `npm.cmd run lint` - run ESLint over TypeScript source and test files plus
+  project JavaScript config files
+- `npm.cmd run typecheck` - run `tsc --noEmit`
 - `npm.cmd run format` - format project files with Prettier
 - `npm.cmd run format:check` - check formatting with Prettier
 
@@ -23,6 +25,7 @@ Actions CI.
 Before committing, run:
 
 - `npm.cmd run format:check`
+- `npm.cmd run typecheck`
 - `npm.cmd test`
 - `npm.cmd run lint`
 
@@ -47,6 +50,7 @@ GitHub Actions runs on `push` and `pull_request` events targeting `main`. It
 installs dependencies with `npm.cmd ci` and then runs:
 
 - `npm.cmd run format:check`
+- `npm.cmd run typecheck`
 - `npm.cmd test`
 - `npm.cmd run lint`
 

@@ -6,16 +6,21 @@
     "node": ">=24"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "test": "node --test --test-isolation=none",
+    "start": "tsx src/index.ts",
+    "test": "node --test --test-isolation=none --import tsx tests/**/*.test.ts",
     "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^25.6.2",
     "eslint": "^10.3.0",
     "globals": "^17.6.0",
-    "prettier": "^3.8.3"
+    "prettier": "^3.8.3",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.2"
   }
 }

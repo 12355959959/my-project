@@ -1,20 +1,27 @@
 import js from '@eslint/js';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-export default [
+const nodeLanguageOptions = {
+  ecmaVersion: 'latest',
+  sourceType: 'module',
+  globals: {
+    ...globals.node,
+  },
+};
+
+export default tseslint.config(
   {
     ignores: ['**/node_modules/**'],
   },
   {
-    ...js.configs.recommended,
-    files: ['eslint.config.js', 'scripts/**/*.js', 'src/**/*.js', 'tests/**/*.js'],
-    languageOptions: {
-      ...(js.configs.recommended.languageOptions ?? {}),
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: {
-        ...globals.node,
-      },
-    },
+    files: ['eslint.config.js', 'scripts/**/*.js'],
+    extends: [js.configs.recommended],
+    languageOptions: nodeLanguageOptions,
   },
-];
+  {
+    files: ['src/**/*.ts', 'tests/**/*.ts'],
+    extends: [js.configs.recommended, ...tseslint.configs.recommended],
+    languageOptions: nodeLanguageOptions,
+  }
+);

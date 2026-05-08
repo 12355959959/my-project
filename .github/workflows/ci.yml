@@ -29,6 +29,9 @@ jobs:
       - name: Check formatting
         run: npm.cmd run format:check
 
+      - name: Typecheck
+        run: npm.cmd run typecheck
+
       - name: Run tests
         run: npm.cmd test
 

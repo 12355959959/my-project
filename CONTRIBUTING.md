@@ -40,15 +40,19 @@ Keep the subject line short, imperative, and lowercase after the type.
 Before opening a pull request, run:
 
 - `npm.cmd run format:check`
+- `npm.cmd run typecheck`
 - `npm.cmd test`
 - `npm.cmd run lint`
 
-`npm.cmd run lint` runs ESLint over the JavaScript files in `src`, `tests`, and
-`scripts` using the flat config in `eslint.config.js`.
+`npm.cmd run typecheck` runs `tsc --noEmit` using `tsconfig.json`.
 
-`npm.cmd test` uses `node --test --test-isolation=none`.
+`npm.cmd run lint` runs ESLint over TypeScript files in `src` and `tests`, plus
+project JavaScript config files, using the flat config in `eslint.config.js`.
 
-Do not open a pull request until all three checks pass.
+`npm.cmd test` uses
+`node --test --test-isolation=none --import tsx tests/**/*.test.ts`.
+
+Do not open a pull request until all four checks pass.
 
 ## Pull Request Flow
 
