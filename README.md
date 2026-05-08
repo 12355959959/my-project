@@ -27,8 +27,8 @@ and GitHub Actions CI, plus a small Python package under `python_src/` with
 - `.venv\Scripts\python.exe -m pytest` - run Python tests
 - `.venv\Scripts\python.exe -m ruff check python_src python_tests` - lint
   Python code
-- `.venv\Scripts\python.exe -m ruff format python_src python_tests` - format
-  Python code
+- `.venv\Scripts\python.exe -m ruff format --check python_src python_tests` -
+  check Python code formatting
 
 ## Workflow
 
@@ -60,12 +60,16 @@ Pull requests must pass GitHub Actions CI before merge.
 ## CI
 
 GitHub Actions runs on `push` and `pull_request` events targeting `main`. It
-installs dependencies with `npm.cmd ci` and then runs:
+installs Node dependencies with `npm.cmd ci`, installs Python dev dependencies
+with `python -m pip install -e ".[dev]"`, and then runs:
 
 - `npm.cmd run format:check`
 - `npm.cmd run typecheck`
 - `npm.cmd test`
 - `npm.cmd run lint`
+- `python -m pytest`
+- `python -m ruff check python_src python_tests`
+- `python -m ruff format --check python_src python_tests`
 
 ## Layout
 

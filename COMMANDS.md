@@ -94,21 +94,27 @@ npm.cmd run format
 npm.cmd run format:check
 ```
 
-### Python Format
+### Python Format Check
 
 ```text
-.venv\Scripts\python.exe -m ruff format python_src python_tests
+.venv\Scripts\python.exe -m ruff format --check python_src python_tests
 ```
+
+Checks Python code formatting with Ruff.
 
 ### CI
 
 GitHub Actions runs on `push` and `pull_request` events targeting `main`. It
-installs dependencies with `npm.cmd ci` and then runs:
+installs Node dependencies with `npm.cmd ci`, installs Python dev dependencies
+with `python -m pip install -e ".[dev]"`, and then runs:
 
 - `npm.cmd run format:check`
 - `npm.cmd run typecheck`
 - `npm.cmd test`
 - `npm.cmd run lint`
+- `python -m pytest`
+- `python -m ruff check python_src python_tests`
+- `python -m ruff format --check python_src python_tests`
 
 ### Build
 

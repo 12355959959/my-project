@@ -23,8 +23,17 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
 
-      - name: Install dependencies
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install Node dependencies
         run: npm.cmd ci
+
+      - name: Install Python dependencies
+        run: python -m pip install -e ".[dev]"
 
       - name: Check formatting
         run: npm.cmd run format:check
@@ -37,3 +46,12 @@ jobs:
 
       - name: Run lint
         run: npm.cmd run lint
+
+      - name: Run Python tests
+        run: python -m pytest
+
+      - name: Run Ruff lint
+        run: python -m ruff check python_src python_tests
+
+      - name: Check Python formatting
+        run: python -m ruff format --check python_src python_tests
