@@ -1,22 +1,22 @@
 ---
 name: Feature request
-about: 提交一个功能需求
+about: Suggest a new feature or improvement
 title: '[Feature]: '
 labels: enhancement
 ---
 
-## 需求描述
+## Problem
 
-<!-- 说明你希望新增或改进什么。 -->
+<!-- Describe the problem or limitation this feature should solve. -->
 
-## 使用场景
+## Use case
 
-<!-- 说明这个需求会在哪些场景下使用。 -->
+<!-- Describe when and how this feature would be used. -->
 
-## 建议方案
+## Proposed solution
 
-<!-- 如果你有实现思路，可以写在这里。 -->
+<!-- Describe the solution you would like to see. -->
 
-## 替代方案
+## Alternatives
 
-<!-- 说明你考虑过的其他方案。 -->
+<!-- Describe any alternatives you considered. -->

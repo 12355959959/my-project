@@ -1,18 +1,18 @@
-## 变更摘要
+## Summary
 
-<!-- 简要说明本次 PR 做了什么。 -->
+<!-- Briefly describe what this PR changes and why. -->
 
-## 测试结果
+## Testing
 
-<!-- 说明执行了哪些测试、结果如何。 -->
+<!-- List the tests or checks you ran. Include results. -->
 
-## 检查清单
+## Checklist
 
-- [ ] 代码已自检
-- [ ] 已补充或更新测试
-- [ ] 已检查文档或注释是否需要同步
-- [ ] 已确认格式化与 lint 通过
+- [ ] I reviewed my own changes.
+- [ ] I added or updated tests where needed.
+- [ ] I updated documentation or comments where needed.
+- [ ] Formatting and lint checks pass.
 
-## 关联 issue
+## Related issue
 
-<!-- 例如：Closes #123 -->
+<!-- Link the related issue, for example: Closes #123. -->

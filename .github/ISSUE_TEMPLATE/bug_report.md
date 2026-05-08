@@ -1,28 +1,28 @@
 ---
 name: Bug report
-about: 报告一个问题
+about: Report a reproducible problem
 title: '[Bug]: '
 labels: bug
 ---
 
-## 问题描述
+## Description
 
-<!-- 请简要描述问题。 -->
+<!-- Briefly describe the problem. -->
 
-## 复现步骤
+## Steps to reproduce
 
 1.
 2.
 3.
 
-## 期望行为
+## Expected behavior
 
-<!-- 说明你期望发生什么。 -->
+<!-- Describe what you expected to happen. -->
 
-## 实际行为
+## Actual behavior
 
-<!-- 说明实际发生了什么。 -->
+<!-- Describe what actually happened. -->
 
-## 环境信息
+## Environment
 
-<!-- 例如：操作系统、浏览器、Node 版本、相关依赖版本。 -->
+<!-- Include OS, browser, Node.js version, package version, or other relevant details. -->
